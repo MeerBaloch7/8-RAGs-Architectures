@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.python-version
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtualenv / env dirs
+venv/
+ENV/
+env/
+.venv/
+
+# Poetry
+poetry.lock
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Data and caches
+data/repos/
+data/*.db
+.data/
+.cache/
+.cache/
+*.sqlite
+*.sqlite3
+
+# FAISS / embeddings / model cache
+faiss_index/
+faiss_index.* 
+embeddings.json
+metadata.json
+*.npy
+*.npz
+
+# Hugging Face / transformer cache
+transformers_cache/
+huggingface/
+cache/
+*.ckpt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+*.orig
