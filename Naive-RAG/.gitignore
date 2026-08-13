@@ -32,6 +32,7 @@ logs/
 
 # Data and caches
 data/repos/
+data/faiss/
 data/*.db
 .data/
 .cache/

@@ -2,6 +2,27 @@
 
 TL;DR: Build a Python app that ingests a GitHub repository, filters code and docs, chunks repository files, embeds chunks with a Hugging Face model, stores vectors in FAISS, and answers developer questions using a Hugging Face LLM with actual repo code as the source. Output should include the files and code chunks used to generate the answer.
 
+## Quick start
+
+```bash
+pip install -r requirements.txt
+
+# Ask a question against a GitHub repository
+python src/app.py "owner/repo" --question "How does authentication work?"
+
+# Ask against a local checkout
+python src/app.py "data/repos/owner_repo" --question "What does predict() do?"
+
+# Print the full prompt sent to the model
+python src/app.py "owner/repo" --question "..." --verbose
+
+# Use a different generation model
+python src/app.py "owner/repo" --question "..." --model gpt2
+```
+
+The default generation model is `Qwen/Qwen3-4b` (instruction-tuned, good answers on CPU).
+Small base models like `gpt2` run fast but cannot follow instructions, so answers will be poor.
+
 ### 1. Define the problem
 - Input: GitHub repo URL or `owner/repo`
 - Output: natural-language answers grounded in repository code
